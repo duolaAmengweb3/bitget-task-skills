@@ -6,13 +6,13 @@ Bitget 交易任务模板 Skills — 兼容 Claude Code / Cursor / Codex 等 40+
 
 ```bash
 # 安装全部 skills（Claude Code）
-npx skills add <org>/bitget-task-skills --all -a claude-code
+npx skills add duolaAmengweb3/bitget-task-skills --all -a claude-code
 
 # 安装全部 skills（Cursor）
-npx skills add <org>/bitget-task-skills --all -a cursor
+npx skills add duolaAmengweb3/bitget-task-skills --all -a cursor
 
 # 安装单个 skill
-npx skills add <org>/bitget-task-skills --skill sleep-mode -a claude-code
+npx skills add duolaAmengweb3/bitget-task-skills --skill sleep-mode -a claude-code
 ```
 
 ## 包含的 Skills
@@ -27,7 +27,7 @@ npx skills add <org>/bitget-task-skills --skill sleep-mode -a claude-code
 
 1. 安装 `bgtask` CLI：
    ```bash
-   npm install -g bgtask
+   npm install -g @hunterweb303/bgtask
    ```
 
 2. 配置 Bitget API Key 环境变量：
