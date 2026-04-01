@@ -16,6 +16,26 @@ argument-hint: "预算 5000U，盯 BTC 费率，稳健档"
 
 "同时买入现货和做空合约，两边对冲不赌方向，只赚多头付给空头的资金费率。"
 
+## 自动环境检测（首次执行前必须运行）
+
+在执行任何命令之前，先跑以下检测，全部通过才继续：
+
+```bash
+# 1. bgtask 是否已安装？没装就装
+which bgtask 2>/dev/null && bgtask --version || npm install -g @hunterweb303/bgtask
+
+# 2. Provider 是否可用？
+bgtask check 2>&1
+
+# 3. API Key 是否配好？
+echo "KEY=${BITGET_API_KEY:+SET}" "SECRET=${BITGET_SECRET_KEY:+SET}" "PASS=${BITGET_PASSPHRASE:+SET}"
+```
+
+- 如果 bgtask 未安装 → 自动 `npm install -g @hunterweb303/bgtask`
+- 如果 Provider 不可用 → 自动 `npm install -g bitget-core`
+- 如果 API Key 缺失 → 询问用户去 https://www.bitget.com/account/newapi 获取，并 export 到环境变量
+- 全部通过后才进入下一步
+
 ## 你的任务
 
 1. **解析用户意图**，提取参数：
